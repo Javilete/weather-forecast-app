@@ -1,0 +1,39 @@
+body {
+    background-color: orange;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #d0021b;
+}
+
+.main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main label {
+  color: white;
+  font-size: x-large;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.button {
+  background-color: green;
+  color: white;
+}

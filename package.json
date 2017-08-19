@@ -1,0 +1,46 @@
+{
+  "name": "weather-forecast-app",
+  "version": "1.0.0",
+  "description": "Weather forecast app",
+  "main": "index.js",
+  "scripts": {
+    "create": "webpack",
+    "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --open --port 8094"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Javilete/weather-forecast-app.git"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "author": "Javier Rubio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Javilete/weather-forecast-app/issues"
+  },
+  "homepage": "https://github.com/Javilete/weather-forecast-app#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "prop-types": "^15.5.10",
+    "query-string": "^5.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.3",
+    "firebase-tools": "^3.9.2",
+    "html-webpack-plugin": "^2.28.0",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
