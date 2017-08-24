@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactRouter = require('react-router-dom');
 var PropTypes = require('prop-types');
+var api = require('../utils/api');
 
 class Home extends React.Component {
 
@@ -28,6 +29,13 @@ class Home extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('City entered: ' + this.state.city);
+    api.getCurrentWeather(this.state.city).then(
+      function(response){
+        console.log(response);
+      }, function(error) {
+        console.log(error);
+      }
+    )
   }
 
   render() {

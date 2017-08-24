@@ -1,3 +1,7 @@
+body {
+  background-color: orange;
+}
+
 ul {
   padding: 0;
 }
@@ -18,6 +22,7 @@ a {
 .section label {
   color: white;
   font-size: xx-large;
+  font-family: monospace;
 }
 
 .row {
@@ -47,4 +52,10 @@ input, .button {
 
 .header {
   background-color: darkorange;
+}
+
+.header .title {
+  font-size: x-large;
+  color: white;
+  font-family: monospace;
 }

@@ -10,6 +10,24 @@ class Header extends React.Component {
     this.state = {
       city: ''
     }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    var value = event.target.value;
+
+    this.setState(function() {
+      return{
+        city: value
+      }
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log('City entered: ' + this.state.city);
   }
 
   render() {
@@ -19,21 +37,23 @@ class Header extends React.Component {
           <p className='title'>
             The Weather
           </p>
-          <p>
-            <input
-              id='city'
-              placeholder='London'
-              type='text'
-              autoComplete='off'
-              value={this.state.city}
-              onChange={this.handleChange} />
-            <button
-              className='button'
-              type='submit'
-              disabled={!this.state.city}>
-              Get Weather
-            </button>
-          </p>
+          <form className='column' onSubmit={this.handleSubmit}>
+            <p>
+              <input
+                id='city'
+                placeholder='London'
+                type='text'
+                autoComplete='off'
+                value={this.state.city}
+                onChange={this.handleChange} />
+              <button
+                className='button'
+                type='submit'
+                disabled={!this.state.city}>
+                Get Weather
+              </button>
+            </p>
+          </form>
         </div>
       </div>
     )
