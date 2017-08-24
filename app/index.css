@@ -59,3 +59,10 @@ input, .button {
   color: white;
   font-family: monospace;
 }
+
+.forecast h1 {
+  text-align: center;
+  color: white;
+  font-family: monospace;
+  font-size: -webkit-xxx-large
+}

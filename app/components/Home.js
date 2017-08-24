@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactRouter = require('react-router-dom');
+var Link = require('react-router-dom').Link;
 var PropTypes = require('prop-types');
-var api = require('../utils/api');
 
 class Home extends React.Component {
 
@@ -29,16 +29,12 @@ class Home extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('City entered: ' + this.state.city);
-    api.getCurrentWeather(this.state.city).then(
-      function(response){
-        console.log(response);
-      }, function(error) {
-        console.log(error);
-      }
-    )
+    this.context.router.push('/forecast?city=' + this.state.city);
   }
 
   render() {
+    var city = this.state.city;
+
     return (
       <div className='section'>
         <div className='centered'>
@@ -58,12 +54,14 @@ class Home extends React.Component {
                 onChange={this.handleChange} />
             </div>
             <div className='row'>
-              <button
+              <Link
                 className='button'
-                type='submit'
-                disabled={!this.state.city}>
+                to={{
+                  pathname: '/forecast',
+                  search: '?city=' + city
+                }}>
                 Get Weather
-              </button>
+              </Link>
             </div>
           </form>
         </div>
