@@ -15,8 +15,8 @@ function getCurrentWeather(city) {
     });
 }
 
-function getFiveDayForecast(city) {
-  var uri = URL + VERSION + FIVE_DAY_FORECAST_PATH + '?q=' + city + '&type=accurate&APPID=' + API_KEY + '&cnt=5';
+function getForecast(city, days) {
+  var uri = URL + VERSION + FIVE_DAY_FORECAST_PATH + '?q=' + city + '&type=accurate&APPID=' + API_KEY + '&cnt=' + days;
   return axios.get(uri)
     .then(function(forecast){
       return forecast.data;
@@ -25,5 +25,5 @@ function getFiveDayForecast(city) {
 
 module.exports = {
   getCurrentWeather: getCurrentWeather,
-  getFiveDayForecast: getFiveDayForecast
+  getForecast: getForecast
 }

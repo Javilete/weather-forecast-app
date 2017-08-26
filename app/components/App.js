@@ -4,6 +4,7 @@ var PropTypes = require('prop-types');
 var Header = require('./Header');
 var Home = require('./Home');
 var Forecast = require('./Forecast');
+var ForecastDetail = require('./ForecastDetail');
 
 var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/forecast' component={Forecast} />
+            <Route path='/forecast/detail' component={ForecastDetail} />
           </Switch>
         </div>
       </Router>

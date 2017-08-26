@@ -1,7 +1,3 @@
-body {
-  background-color: orange;
-}
-
 ul {
   padding: 0;
 }
@@ -15,7 +11,7 @@ a {
   color: #d0021b;
 }
 
-#app {
+.container {
   background-color: orange;
 }
 
@@ -34,14 +30,18 @@ a {
 .button {
   background-color: green;
   color: white;
+  font-family: monospace;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
 }
 
 .centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input, .button {
@@ -62,7 +62,29 @@ input, .button {
 
 .forecast h1 {
   text-align: center;
-  color: white;
+  color: darkgrey;
   font-family: monospace;
   font-size: -webkit-xxx-large
+}
+
+.forecast-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.forecast-item {
+  margin: 20px;
+  text-align: center;
+  font-family: monospace;
+  color: darkgrey;
+}
+
+.forecast-item img {
+  width: 100%;
+  height: auto;
+}
+
+.forecast-item .weather {
+  font-size: x-large;
 }

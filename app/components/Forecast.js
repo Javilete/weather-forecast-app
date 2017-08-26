@@ -3,6 +3,7 @@ var ReactRouter = require('react-router-dom');
 var PropTypes = require('prop-types');
 var queryString = require('query-string');
 var Loading = require('./Loading');
+var ForecastGrid = require('./ForecastGrid');
 var api = require('../utils/api');
 
 class Forecast extends React.Component {
@@ -10,26 +11,20 @@ class Forecast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: '',
       forecast: ''
     };
 
-    this.getWeatherForecast = this.getWeatherForecast.bind(this);
+    this.getForecast = this.getForecast.bind(this);
   }
 
   componentDidMount () {
     var search = queryString.parse(this.props.location.search);
     console.log(this.props);
-    this.setState(function() {
-      return {
-        city: search.city
-      }
-    })
-    this.getWeatherForecast(search.city);
+    this.getForecast(search.city);
   }
 
-  getWeatherForecast(city) {
-    api.getCurrentWeather(city).then(
+  getForecast(city) {
+    api.getForecast(city, 6).then(
       function(response){
         console.log(response);
         this.setState(function() {
@@ -46,8 +41,7 @@ class Forecast extends React.Component {
   render() {
     return (
       <div className='forecast'>
-        <h1>{this.state.city}</h1>
-        {!this.state.forecast ? <Loading /> : null }
+        {!this.state.forecast ? <Loading /> : <ForecastGrid forecast={this.state.forecast} /> }
       </div>
     )
   }
