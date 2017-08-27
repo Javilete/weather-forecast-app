@@ -80,11 +80,18 @@ input, .button {
   color: darkgrey;
 }
 
-.forecast-item img {
+.forecast-item img, .detail img {
   width: 100%;
   height: auto;
 }
 
 .forecast-item .weather {
   font-size: x-large;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
 }

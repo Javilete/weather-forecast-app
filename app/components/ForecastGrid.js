@@ -1,6 +1,8 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var moment = require('moment');
+var Link = require('react-router-dom').Link;
+
 
 class ForecastGrid extends React.Component {
   constructor(props) {
@@ -36,9 +38,16 @@ class ForecastGrid extends React.Component {
                 <li key={day.dt + index}
                   className='forecast-item'
                   onClick={handleClick.bind(null, day.dt)}>
-                <img src={'../app/images/weather-icons/' + day.weather[0].icon + '.svg'} alt='{day.weather[0].description}' />
-                <p className='weather'>{day.weather[0].main}</p>
-                <p className='date'>{moment.unix(day.dt).format('dddd, MMM Do')}</p>
+                  <Link to={{
+                      pathname: `/detail/${forecast.city.name}`,
+                      state: {
+                                  date: {day}, city: `${forecast.city.name}, ${forecast.city.country}`}
+
+                            }}>
+                  <img src={'../app/images/weather-icons/' + day.weather[0].icon + '.svg'} alt='{day.weather[0].description}' />
+                  <p className='weather'>{day.weather[0].main}</p>
+                  <p className='date'>{moment.unix(day.dt).format('dddd, MMM Do')}</p>
+                </Link>
               </li>
             )
             })}

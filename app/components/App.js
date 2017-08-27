@@ -19,7 +19,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/forecast' component={Forecast} />
-            <Route path='/forecast/detail' component={ForecastDetail} />
+            <Route path='/detail/:city' component={ForecastDetail} />
           </Switch>
         </div>
       </Router>
