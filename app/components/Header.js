@@ -35,7 +35,7 @@ class Header extends React.Component {
       <div className='header'>
         <div className='row'>
           <p className='title'>
-            The Weather
+            J-Weather
           </p>
           <form className='column' onSubmit={this.handleSubmit}>
             <p>

@@ -1,7 +1,7 @@
 var axios = require('axios');
 
 var API_KEY = '0f585df0241438ef9f81fdec9b26f746';
-var URL = 'http://api.openweathermap.org/data/';
+var URL = 'https://api.openweathermap.org/data/';
 var VERSION = '2.5';
 
 var CURRENT_WEATHER_PATH = '/weather';
@@ -16,7 +16,7 @@ function getCurrentWeather(city) {
 }
 
 function getForecast(city, days) {
-  var uri = URL + VERSION + FIVE_DAY_FORECAST_PATH + '?q=' + city + '&type=accurate&APPID=' + API_KEY + '&cnt=' + days;
+  var uri = URL + VERSION + FIVE_DAY_FORECAST_PATH + '?q=' + city + '&type=accurate&units=metric&APPID=' + API_KEY + '&cnt=' + days;
   return axios.get(uri)
     .then(function(forecast){
       return forecast.data;

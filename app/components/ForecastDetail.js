@@ -1,5 +1,6 @@
 var React = require('react');
 var moment = require('moment');
+var changeCase = require('change-case');
 
 class ForecastDetail extends React.Component {
 
@@ -24,20 +25,23 @@ class ForecastDetail extends React.Component {
       <div className='detail'>
         <ul>
           <li className='row'>
+            <p className='date'>{moment.unix(day.dt).format('dddd, MMM Do')}</p>
+          </li>
+          <li className='row'>
             <img src={'../app/images/weather-icons/' + day.weather[0].icon + '.svg'} alt='{day.weather[0].description}' />
           </li>
           <li className='row'>
-            <p className='date'>{moment.unix(day.dt).format('dddd, MMM Do')}</p>
+            <p className='main'>{day.weather[0].main}</p>
           </li>
           <li className='row'>
             <h1>{city}</h1>
           </li>
           <li className='row'>
-            <ul>
-              <li>{day.weather[0].description}</li>
-              <li>min temp: {day.temp.min} degrees</li>
-              <li>max temp: {day.temp.max} degrees</li>
-              <li>humidity: {day.humidity}</li>
+            <ul className='extra-info'>
+              <li>{changeCase.sentenceCase(day.weather[0].description)}</li>
+              <li>Min temp: {day.temp.min} degrees</li>
+              <li>Max temp: {day.temp.max} degrees</li>
+              <li>Humidity: {day.humidity}</li>
             </ul>
           </li>
         </ul>

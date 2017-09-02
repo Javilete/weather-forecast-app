@@ -44,7 +44,7 @@ class ForecastGrid extends React.Component {
                                   date: {day}, city: `${forecast.city.name}, ${forecast.city.country}`}
 
                             }}>
-                  <img src={'../app/images/weather-icons/' + day.weather[0].icon + '.svg'} alt='{day.weather[0].description}' />
+                  <img src={'../app/images/weather-icons/' + day.weather[0].icon + '.svg'} alt='day.weather[0].description' />
                   <p className='weather'>{day.weather[0].main}</p>
                   <p className='date'>{moment.unix(day.dt).format('dddd, MMM Do')}</p>
                 </Link>
