@@ -36,12 +36,12 @@ class Home extends React.Component {
     var city = this.state.city;
 
     return (
-      <div className='section'>
+      <div className='section' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
         <div className='centered'>
           <form className='column' onSubmit={this.handleSubmit}>
             <div className='row'>
               <label className='title' htmlFor='city'>
-                Enter a city and state
+                Enter a city name
               </label>
             </div>
             <div className='row'>
