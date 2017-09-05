@@ -65,7 +65,7 @@ input, .button {
   text-align: center;
   color: darkgrey;
   font-family: monospace;
-  font-size: -webkit-xxx-large
+  font-size: xx-large
 }
 
 .forecast-list {
@@ -82,8 +82,8 @@ input, .button {
 }
 
 .forecast-item img, .detail img {
-  width: 100%;
-  height: 100%;
+  width: 75%;
+  height: 50%;
 }
 
 .forecast-item .weather {
@@ -110,4 +110,30 @@ input, .button {
 .extra-info li {
   margin: 10px 0px;
   color: darkgrey;
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .section label {
+      font-size: xx-large;
+    }
+
+    input, .button {
+      font-size: 15px;
+    }
+
+    .header form {
+      display: none;
+    }
+
+    .forecast-item {
+      margin: 10px;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width : 321px) and (orientation : landscape) {
+    input, .button {
+      font-size: 15px;
+    }
 }
