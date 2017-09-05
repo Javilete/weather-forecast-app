@@ -14,6 +14,7 @@ class Home extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
@@ -32,6 +33,12 @@ class Home extends React.Component {
     this.context.router.push('/forecast?city=' + this.state.city);
   }
 
+  handleClick(event) {
+    if(this.state.city.length == 0) {
+      event.preventDefault();
+    }
+  }
+
   render() {
     var city = this.state.city;
 
@@ -47,7 +54,7 @@ class Home extends React.Component {
             <div className='row'>
               <input
                 id='city'
-                placeholder='London'
+                placeholder='ie: London'
                 type='text'
                 autoComplete='off'
                 value={this.state.city}
@@ -56,6 +63,7 @@ class Home extends React.Component {
             <div className='row'>
               <Link
                 className='button'
+                onClick={this.handleClick}
                 to={{
                   pathname: '/forecast',
                   search: '?city=' + city

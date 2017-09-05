@@ -34,7 +34,10 @@ class Forecast extends React.Component {
         })
       }.bind(this), function(error) {
         console.log(error);
-      }
+        this.props.history.push({
+          pathname: '/'
+        })
+      }.bind(this),
     );
   }
 
