@@ -28,6 +28,8 @@ class Header extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('City entered: ' + this.state.city);
+    this.context.router.history.push('/forecast?city=' + this.state.city);
+    window.location.reload();
   }
 
   render() {
@@ -59,5 +61,9 @@ class Header extends React.Component {
     )
   }
 }
+
+Header.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 module.exports = Header;
